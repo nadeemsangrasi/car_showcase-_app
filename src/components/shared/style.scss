@@ -1,0 +1,96 @@
+@import "@/mixins.scss";
+@import "@/_utils.scss";
+//wrappper
+.wrapper {
+  padding: 0px 12px;
+  @include md {
+    width: 90%;
+    margin: 0px auto;
+  }
+}
+// Card
+.card {
+  border-radius: 20px;
+  margin: 80px auto;
+  margin-top: 30px;
+  width: 70%;
+  background-color: $color1;
+  @include sm {
+    width: 400px;
+  }
+  .image {
+    height: 100%;
+    width: 100%;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .headings {
+    margin: 0px 20px;
+    margin-bottom: 10px;
+    span {
+      margin-top: -5px;
+      display: flex;
+      align-items: center;
+      font-size: 15px;
+      @include sm {
+        font-size: 1.2rem;
+      }
+      font-weight: 400;
+    }
+    h2 {
+      display: inline-block;
+      @include subHeading(1.2rem, 1.7rem);
+    }
+    h1 {
+      @include heading(2rem, 2.3rem);
+    }
+  }
+  .icons {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 20px;
+    padding: 12px 0px;
+    flex-wrap: wrap;
+    gap: 12px;
+    span {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    img {
+      width: 30px;
+      height: 30px;
+      @include sm {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+  &:hover {
+    transition: all ease-in-out 0.5s;
+    background-color: white;
+    box-shadow: 3px 3px 10px $color2;
+    .icons {
+      display: none;
+    }
+    .btn {
+      display: block;
+    }
+  }
+
+  .btn {
+    display: none;
+    margin: 40px 0px;
+
+    button {
+      &:hover {
+        cursor: pointer;
+      }
+      display: block;
+      margin: 12px auto;
+      @include myBtn(80%, 80%);
+    }
+  }
+}

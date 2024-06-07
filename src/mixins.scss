@@ -1,0 +1,66 @@
+@import "@/_utils.scss";
+@mixin myBtn($size, $Fsize) {
+  padding: 10px 10px;
+  width: $Fsize;
+  font-size: 22px;
+  @include sm {
+    font-size: 1.4rem;
+  }
+  outline: none;
+  border: none;
+  color: white;
+  background-color: $color3;
+  border-radius: 999px;
+  font-weight: 500;
+  font-family: futura;
+  @include md {
+    font-size: 1.4rem;
+    padding: 10px 10px;
+    width: $size;
+  }
+  cursor: pointer;
+}
+
+@mixin heading($size, $phoneSize) {
+  font-size: $size;
+  font-family: futura;
+  @include lg {
+    font-size: $phoneSize;
+  }
+}
+@mixin subHeading($size, $phoneSize) {
+  padding: 12px 0px;
+  font-size: $size;
+  @include lg {
+    font-size: $phoneSize;
+  }
+}
+@mixin sm {
+  @media only screen and (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media only screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media only screen and (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media only screen and (min-width: 1536px) {
+    @content;
+  }
+}

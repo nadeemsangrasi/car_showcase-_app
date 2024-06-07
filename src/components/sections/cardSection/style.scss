@@ -1,0 +1,23 @@
+@import "@/mixins.scss";
+
+.cardContainer {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  margin-top: 100px;
+  place-items: center;
+  grid-template-columns: 1fr;
+  @include md {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  @include lg {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+}
+.btn {
+  @include myBtn(20%, 80%);
+  display: block;
+  margin: 12px auto;
+}
