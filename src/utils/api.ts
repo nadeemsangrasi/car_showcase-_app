@@ -4,12 +4,12 @@ export const fetchDataFromApi = async (fuel = '', year: string = '2022', manufac
     const url: string = `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?limit=${limit}&fuel_type=${fuel}&year=${year}&make=${manufacture}&model=${model}`
 
     const options = {
-        method: "GET",
+        method: 'GET',
         headers: {
-            'X-RapidAPI-Key': 'd1bb9212bbmsh8eb2e7eb6f5b147p1af2dejsn7061c4a865f8',
-            'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
+            'x-rapidapi-key': 'da1aab2d31msh4a879c586a10d41p1090a0jsnd51831e8dd5b',
+            'x-rapidapi-host': 'cars-by-api-ninjas.p.rapidapi.com'
         }
-    }
+    };
 
     try {
         const response: Response = await fetch(url, options)

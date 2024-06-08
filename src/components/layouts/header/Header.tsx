@@ -3,6 +3,7 @@ import Image from "next/image";
 import logo from "@/assets/logos/logo-1.png";
 import Wrapper from "@/components/shared/Wrapper";
 import Link from "next/link";
+import AuthBtn from "./AuthBtn";
 
 const Header = () => {
   return (
@@ -19,9 +20,7 @@ const Header = () => {
         </div>
         <div className="right">
           <div className="login">
-            <button>
-              <Link href={"#"}>sign in</Link>
-            </button>
+            <AuthBtn />
           </div>
         </div>
       </div>

@@ -29,13 +29,15 @@ export type SearchParams = {
 }
 
 export type CardType = {
-  title: string;
-  imageSrc: string;
+  make: string;
+  model: string;
+  imageSrc: StaticImageData;
   mpg: string;
   drive: string;
   id: string;
 }
 
+import { StaticImageData } from "next/image";
 //types for lord icons
 import "react";
 type LordIconTrigger =

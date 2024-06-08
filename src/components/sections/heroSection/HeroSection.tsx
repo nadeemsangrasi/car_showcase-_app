@@ -1,6 +1,8 @@
 "use client";
+import Image from "next/image";
 import "./style.scss";
 import Wrapper from "@/components/shared/Wrapper";
+import img from "@/assets/images/heroImage.png";
 const HeroSection = () => {
   return (
     <Wrapper>
@@ -17,13 +19,7 @@ const HeroSection = () => {
         </div>
         <div className="heroRight">
           <div className="image">
-            <img
-              src="/images/heroImage.png"
-              height={0}
-              width={0}
-              alt="image"
-              loading="lazy"
-            />
+            <Image src={img} alt="image" loading="lazy" />
           </div>
         </div>
       </div>

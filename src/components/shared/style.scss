@@ -69,28 +69,23 @@
     }
   }
   &:hover {
+    button {
+      display: block;
+    }
     transition: all ease-in-out 0.5s;
     background-color: white;
     box-shadow: 3px 3px 10px $color2;
     .icons {
       display: none;
     }
-    .btn {
-      display: block;
-    }
   }
 
-  .btn {
-    display: none;
-    margin: 40px 0px;
-
-    button {
-      &:hover {
-        cursor: pointer;
-      }
-      display: block;
-      margin: 12px auto;
-      @include myBtn(80%, 80%);
+  button {
+    &:hover {
+      cursor: pointer;
     }
+    display: none;
+    margin: 40px auto;
+    @include myBtn(80%, 80%);
   }
 }

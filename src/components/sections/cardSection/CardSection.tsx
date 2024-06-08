@@ -6,6 +6,8 @@ import Card from "@/components/shared/Card";
 import { useRouter } from "next/navigation";
 import Wrapper from "@/components/shared/Wrapper";
 import { updateSearchParams } from "@/utils/updateParams";
+import CardSkeleton from "@/components/shared/cardSkeleton/CardSkeleton";
+import model1 from "@/assets/images/model-1.png";
 const CardSection = ({
   data,
   loading,
@@ -18,18 +20,32 @@ const CardSection = ({
   return (
     <Wrapper>
       <div className="cardContainer">
-        {data?.map((carDetails: CarInfo) => (
-          <Card
-            title={carDetails.model}
-            imageSrc="/images/model-1.png"
-            mpg={carDetails.city_mpg}
-            drive={carDetails.drive}
-            id={carDetails.id.toString()}
-          />
-        ))}
+        {!loading ? (
+          data?.map((carDetails: CarInfo) => (
+            <Card
+              make={carDetails.make}
+              model={carDetails.model}
+              imageSrc={model1}
+              mpg={carDetails.city_mpg}
+              drive={carDetails.drive}
+              id={carDetails.id.toString()}
+            />
+          ))
+        ) : (
+          <>
+            <CardSkeleton />
+            <CardSkeleton />
+            <CardSkeleton />
+            <CardSkeleton />
+            <CardSkeleton />
+            <CardSkeleton />
+            <CardSkeleton />
+            <CardSkeleton />
+            <CardSkeleton />
+          </>
+        )}
       </div>
-
-      {data !== undefined && (
+      {!loading && (
         <button
           onClick={(): void => {
             setLimit(limit + 20);

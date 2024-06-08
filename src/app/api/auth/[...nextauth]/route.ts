@@ -7,8 +7,10 @@ let handler = NextAuth({
         GithubProvider({
             clientId: "Ov23ctyuSaUdQXcoe6sx",
             clientSecret: "97a68316e0702d3e45bd7fec7785eeb2bdb177eb"
-        })
-    ]
+        }),
+
+    ],
+    debug: true,
 })
 
 export { handler as GET, handler as POST }

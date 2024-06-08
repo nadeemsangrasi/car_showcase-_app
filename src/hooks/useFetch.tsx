@@ -1,8 +1,10 @@
 "use client";
 
+import { addData } from "@/lib/features/carData/carDataSlice";
 import { CarInfo } from "@/types/type";
 import { fetchDataFromApi } from "@/utils/api";
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 
 const useFetch = (
   fuelType: string,
@@ -10,7 +12,8 @@ const useFetch = (
   manufacture: string,
   model: string,
   limit: string
-): { data: CarInfo[]; loading: boolean } => {
+): void => {
+  const dispatch = useDispatch();
   const [data, setData] = useState<CarInfo[] | any>();
   const [loading, setLoading] = useState<boolean>(true);
   useEffect((): void => {
@@ -23,8 +26,7 @@ const useFetch = (
         console.log(error);
       });
   }, [fuelType, yearType, manufacture, model, limit]);
-
-  return { data, loading };
+  dispatch(addData({ data, loading }));
 };
 
 export default useFetch;

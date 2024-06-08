@@ -16,13 +16,17 @@ const SearchSection = () => {
   const [model, setModel] = useState<string>("");
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    if (manufacture) {
+    if (manufacture && model) {
       let path: string = updateSearchParams("manufacture", manufacture);
       router.push(path);
-    }
-    if (model) {
-      let path: string = updateSearchParams("model", model);
+      let path2: string = updateSearchParams("model", model);
+      router.push(path2);
+    } else if (manufacture) {
+      let path: string = updateSearchParams("manufacture", manufacture);
       router.push(path);
+    } else if (model) {
+      let path2: string = updateSearchParams("model", model);
+      router.push(path2);
     }
   };
 
